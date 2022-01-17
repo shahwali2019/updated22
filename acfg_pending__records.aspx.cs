@@ -292,9 +292,11 @@ namespace Collateral_int
         protected void ApproveUpdateBtn_Click(object sender, ImageClickEventArgs e)
         {
 
-         
+            string fullUsername = User.Identity.Name;
+            int index_domain = fullUsername.IndexOf("AIB\\");
+            string username = fullUsername.Substring(fullUsername.IndexOf("\\") + 1);
 
-                string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
                 using (SqlConnection sqlConn = new SqlConnection(connectionString))
                 {
                     foreach (GridViewRow gw in GridView3.Rows)
@@ -327,7 +329,7 @@ namespace Collateral_int
                                   ",[Remark] =@val9" +
                                   ",[InsertedBy]=@val10" +
                                   ",[Updated By]=@val12" +
-                                  ",[Approved By]='" + Session["Users"].ToString() + "'" +
+                                  ",[Approved By]='" + username + "'" +
                                   " WHERE id=@val1";
                         SqlCommand sqlcmd = new SqlCommand(queryy, sqlConn);
                             //==========catch selected data=================================

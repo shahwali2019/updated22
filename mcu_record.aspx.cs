@@ -37,12 +37,6 @@ namespace Collateral_int
                 {
                     Response.Redirect("NotAuthorize.aspx?ReturnPath=" + Server.UrlEncode(Request.Url.AbsoluteUri));
                 }
-
-                if (Access_role == null)
-                {
-                    Response.Redirect("Loging.aspx");
-                    Session.Remove("loading");
-                }
             }
         }
 
@@ -71,7 +65,7 @@ namespace Collateral_int
                     resultLbl.Text = "Found " + counter + " Record.";
                 }
                 else
-                    
+
                     resultLbl.Text = "Found " + counter + " Record(s).";
             }
             //----------Search by Customer Name-----------------------------------------------------------------
@@ -82,7 +76,7 @@ namespace Collateral_int
                 string sqlQuery;
                 SqlConnection sqlCon = new SqlConnection(connectionString);
                 sqlCon.Open();
-                sqlQuery = "SELECT *FROM mcu_tbl where [Customre Name] LIKE '%"+txtbname.Text.Trim()+"%'";
+                sqlQuery = "SELECT *FROM mcu_tbl where [Customre Name] LIKE '%" + txtbname.Text.Trim() + "%'";
                 SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
@@ -97,10 +91,9 @@ namespace Collateral_int
                 {
                     resultLbl.Text = "Found " + counter + " Record.";
                 }
-                else
-                    resultLbl.Text = "Found " + counter + " Record(s).";
+                else resultLbl.Text = "Found " + counter + " Record(s).";
             }
-           
+
             //----------Search by AccountNumber-----------------------------------------------------------------
             if (string.IsNullOrEmpty(txtbname.Text) && !string.IsNullOrEmpty(txtCode.Text) && string.IsNullOrEmpty(txtLog.Text) && statusList.SelectedValue == "LS")
             {
@@ -124,10 +117,9 @@ namespace Collateral_int
                 {
                     resultLbl.Text = "Found " + counter + " Record.";
                 }
-                else
-                    resultLbl.Text = "Found " + counter + " Record(s).";
+                else resultLbl.Text = "Found " + counter + " Record(s).";
             }
-        
+
             //----------Search by Approval Number-----------------------------------------------------------------
             if (string.IsNullOrEmpty(txtbname.Text) && string.IsNullOrEmpty(txtCode.Text) && !string.IsNullOrEmpty(txtLog.Text) && statusList.SelectedValue == "LS")
             {
@@ -151,8 +143,7 @@ namespace Collateral_int
                 {
                     resultLbl.Text = "Found " + counter + " Record.";
                 }
-                else
-                    resultLbl.Text = "Found " + counter + " Record(s).";
+                else resultLbl.Text = "Found " + counter + " Record(s).";
             }
             //-------------------------------------------------------
             //----------Search by AccountNumber-----------------------------------------------------------------
@@ -178,8 +169,7 @@ namespace Collateral_int
                 {
                     resultLbl.Text = "Found " + counter + " Record.";
                 }
-                else
-                    resultLbl.Text = "Found " + counter + " Record(s).";
+                else resultLbl.Text = "Found " + counter + " Record(s).";
             }
 
         }
@@ -231,7 +221,6 @@ namespace Collateral_int
                 Response.Redirect("new_mcu_record.aspx");
             }
 
-
         }
 
         protected void addNew_Click(object sender, ImageClickEventArgs e)
@@ -258,16 +247,16 @@ namespace Collateral_int
                 var chkSelect = gw.FindControl("chkSelect") as CheckBox;
                 if (chkSelect.Checked)
                 {
-                    string Val1 = (gw.FindControl("Label2") as Label).Text;//
-                    string Val2 = (gw.FindControl("Label3") as Label).Text;//
-                    string Val3 = (gw.FindControl("Label4") as Label).Text;//
-                    string Val4 = (gw.FindControl("Label5") as Label).Text;//
-                    string Val5 = (gw.FindControl("Label6") as Label).Text;//
-                    string Val6 = (gw.FindControl("Label7") as Label).Text;//
-                    string Val7 = (gw.FindControl("Label8") as Label).Text;//
-                    string Val8 = (gw.FindControl("Label9") as Label).Text;//
-                    string Val9 = (gw.FindControl("Label10") as Label).Text;//
-                    string Val11 = (gw.FindControl("Label11") as Label).Text;//
+                    string Val1 = (gw.FindControl("Label2") as Label).Text; //
+                    string Val2 = (gw.FindControl("Label3") as Label).Text; //
+                    string Val3 = (gw.FindControl("Label4") as Label).Text; //
+                    string Val4 = (gw.FindControl("Label5") as Label).Text; //
+                    string Val5 = (gw.FindControl("Label6") as Label).Text; //
+                    string Val6 = (gw.FindControl("Label7") as Label).Text; //
+                    string Val7 = (gw.FindControl("Label8") as Label).Text; //
+                    string Val8 = (gw.FindControl("Label9") as Label).Text; //
+                    string Val9 = (gw.FindControl("Label10") as Label).Text; //
+                    string Val11 = (gw.FindControl("Label11") as Label).Text; //
                     dt.Rows.Add(Val1, Val2, Val3, Val4, Val5, Val6, Val7, Val8, Val9, Val11);
                 }
             }
@@ -298,10 +287,6 @@ namespace Collateral_int
                 Response.Flush();
                 Response.End();
             }
-
-
-
-
 
         }
     }

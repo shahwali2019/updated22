@@ -13,7 +13,25 @@ namespace Collateral_int
 
     public partial class wak_pending : System.Web.UI.Page
     {
-        string Val1, Val2, Val3, Val4, Val5, Val6, Val7, Val8, Val9, Val10, Val11, Val12, Val13, Val14, Val15;
+        string Val1,
+        Val2,
+        Val3,
+        Val4,
+        Val5,
+        Val6,
+        Val7,
+        Val8,
+        Val9,
+        Val10,
+        Val11,
+        Val12,
+        Val13,
+        Val14,
+        Val15,
+        Val16,
+        Val17,
+        Val18,
+        Val19;
 
         protected void ApproveUpdateBtn_Click(object sender, ImageClickEventArgs e)
         {
@@ -28,69 +46,69 @@ namespace Collateral_int
                     var chkSelect = gw.FindControl("chkSelect") as CheckBox;
                     if (chkSelect.Checked)
                     {
-                        Val1 = (gw.FindControl("Label1") as Label).Text;//id
-                        Val2 = (gw.FindControl("Label2") as Label).Text;//Client Name
-                        Val3 = (gw.FindControl("Label3") as Label).Text;//Facility Approval
-                        Val4 = (gw.FindControl("Label4") as Label).Text;//FacilityType
-                        Val5 = (gw.FindControl("Label5") as Label).Text;//FacilityStatus
-                        Val6 = (gw.FindControl("Label6") as Label).Text;//SafeNo
-                        Val7 = (gw.FindControl("Label7") as Label).Text;//drawer
-                        Val8 = (gw.FindControl("Label8") as Label).Text;//FolderNo
-                        Val9 = (gw.FindControl("Label9") as Label).Text;//Extention
-                        Val10 = (gw.FindControl("Label10") as Label).Text;//Modification
-                        Val11 = (gw.FindControl("Label11") as Label).Text;//SafeInDate
-                        Val12 = (gw.FindControl("Label12") as Label).Text;//DocStatus
-                        Val13 = (gw.FindControl("Label13") as Label).Text;//SafeOutDate
-                        Val14 = (gw.FindControl("Label14") as Label).Text;//Remark
-                        //Inserted by is not involved
-                        Val15 = (gw.FindControl("Label15") as Label).Text;//UpatedBy
-                        //Val16 = (gw.FindControl("Label16") as Label).Text;//ArchDoc
-                        //Val17 = (gw.FindControl("Label17") as Label).Text;//Archdate
-                        //Val18 = (gw.FindControl("Label18") as Label).Text;//SafeReference
+                        Val1 = (gw.FindControl("Label1") as Label).Text; //id
+                        Val2 = (gw.FindControl("Label2") as Label).Text; //Client Name
+                        Val3 = (gw.FindControl("Label3") as Label).Text; //Facility Approval
+                        Val4 = (gw.FindControl("Label4") as Label).Text; //FacilityType
+                        Val5 = (gw.FindControl("Label5") as Label).Text; //FacilityStatus
+                        Val6 = (gw.FindControl("Label6") as Label).Text; //SafeNo
+                        Val7 = (gw.FindControl("Label7") as Label).Text; //drawer
+                        Val8 = (gw.FindControl("Label8") as Label).Text; //FolderNo
+                        Val9 = (gw.FindControl("Label9") as Label).Text; //Extention
+                        Val10 = (gw.FindControl("Label10") as Label).Text; //Modification
+                        Val11 = (gw.FindControl("Label11") as Label).Text; //SafeInDate
+                        Val12 = (gw.FindControl("Label12") as Label).Text; //DocStatus
+                        Val13 = (gw.FindControl("Label13") as Label).Text; //SafeOutDate
+                        Val14 = (gw.FindControl("Label14") as Label).Text; //Remark
+                                                                           //Inserted by is not involved
+                        Val15 = (gw.FindControl("Label15") as Label).Text; //UpatedBy
+                        Val16 = (gw.FindControl("Label16") as Label).Text; //ArchDoc
+                        Val17 = (gw.FindControl("Label17") as Label).Text; //Archdate
+                        Val18 = (gw.FindControl("Label18") as Label).Text; //SafeReference
                         sqlConn.Open();
                         string queryy = "UPDATE [dbo].[Wak_tbl] SET" +
-                                  // "id=@val1"+
-                                  "[ClientName] =@val2" +
-                                  ",[FacilityApproval] =@val3" +
-                                  ",[FacilityType] =@val4" +
-                                  ",[FacilityStatus] =@val5" +
-                                  ",[SafeNo] =@val6" +
-                                  ",[drawer] =@val7" +
-                                  ",[FolderNo] =@val8" +
-                                  ",[Extention] =@val9" +
-                                  ",[modification]=@val10" +
-                                  ",[SafeInDate] =@val11" +
-                                  ",[DocStatus] =@val12" +
-                                  ",[SafeOutDate] =@val13" +
-                                  ",[Remark] =@val14" +
-                                  ",[approvedBy]='" + username + "'" +
-                                  ",[UpdatedBy]=@val15" +
-                                  //",[ArchDoc]=@val16" +
-                                  //",[SafeRef]=@val18" +
-                                  //",[ArchDate]=@val17" +
-
-                                  " WHERE id='" + Val1 + "'";
+                        // "id=@val1"+
+                        "[ClientName] =@val2" + 
+                        ",[FacilityApproval] =@val3" +
+                        ",[FacilityType] =@val4" + 
+                        ",[FacilityStatus] =@val5" +
+                        ",[SafeNo] =@val6" +
+                        ",[drawer] =@val7" +
+                        ",[FolderNo] =@val8" + 
+                        ",[Extention] =@val9" + 
+                        ",[modification]=@val10" +
+                        ",[SafeInDate] =@val11" + 
+                        ",[DocStatus] =@val12" +
+                        ",[SafeOutDate] =@val13" + 
+                        ",[Remark] =@val14" + 
+                        ",[approvedBy]='" + username + "'" + 
+                        ",[UpdatedBy]=@val15" + 
+                        ",[ArchDoc]=@val16" + 
+                        ",[SafeRef]=@val17" + 
+                        ",[ArchDate]=@val18" +
+                        " WHERE id='" + Val1 + "'";
 
                         SqlCommand sqlcmd = new SqlCommand(queryy, sqlConn);
                         //==========catch selected data=================================
 
                         // sqlcmd.Parameters.AddWithValue("@val1", Val1);//clinename
-                        sqlcmd.Parameters.AddWithValue("@val2", Val2);//clinename
-                        sqlcmd.Parameters.AddWithValue("@val3", Val3);//facilityApprovll
-                        sqlcmd.Parameters.AddWithValue("@val4", Val4);//FacilityType
-                        sqlcmd.Parameters.AddWithValue("@val5", Val5);//Facility Status
-                        sqlcmd.Parameters.AddWithValue("@val6", Val6);//SafeNo
-                        sqlcmd.Parameters.AddWithValue("@val7", Val7);//drawer
-                        sqlcmd.Parameters.AddWithValue("@val8", Val8);//folderNO
-                        sqlcmd.Parameters.AddWithValue("@val9", Val9);//Extention
-                        sqlcmd.Parameters.AddWithValue("@val10", Val10);//Modification
-                        sqlcmd.Parameters.AddWithValue("@val11", Val11);//SafeIn
-                        sqlcmd.Parameters.AddWithValue("@val12", Val12);//DocStatus
-                        sqlcmd.Parameters.AddWithValue("@val13", Val13);//SafeOutDate
-                        sqlcmd.Parameters.AddWithValue("@val14", Val14);//Remark
-                        sqlcmd.Parameters.AddWithValue("@val15", Val15);//Updated By
-
-
+                        sqlcmd.Parameters.AddWithValue("@val2", Val2); //clinename
+                        sqlcmd.Parameters.AddWithValue("@val3", Val3); //facilityApprovll
+                        sqlcmd.Parameters.AddWithValue("@val4", Val4); //FacilityType
+                        sqlcmd.Parameters.AddWithValue("@val5", Val5); //Facility Status
+                        sqlcmd.Parameters.AddWithValue("@val6", Val6); //SafeNo
+                        sqlcmd.Parameters.AddWithValue("@val7", Val7); //drawer
+                        sqlcmd.Parameters.AddWithValue("@val8", Val8); //folderNO
+                        sqlcmd.Parameters.AddWithValue("@val9", Val9); //Extention
+                        sqlcmd.Parameters.AddWithValue("@val10", Val10); //Modification
+                        sqlcmd.Parameters.AddWithValue("@val11", Val11); //SafeIn
+                        sqlcmd.Parameters.AddWithValue("@val12", Val12); //DocStatus
+                        sqlcmd.Parameters.AddWithValue("@val13", Val13); //SafeOutDate
+                        sqlcmd.Parameters.AddWithValue("@val14", Val14); //Remark
+                        sqlcmd.Parameters.AddWithValue("@val15", Val15); //Updated By
+                        sqlcmd.Parameters.AddWithValue("@val16", Val16); //Archdate
+                        sqlcmd.Parameters.AddWithValue("@val17", Val17); //Updated By
+                        sqlcmd.Parameters.AddWithValue("@val18", Val18); //Archdate
                         sqlcmd.ExecuteNonQuery();
                         sqlConn.Close();
                         using (SqlConnection sqlCon2 = new SqlConnection(connectionString))
@@ -103,7 +121,7 @@ namespace Collateral_int
                             sqlCon2.Close();
                         }
                     }
-                }//END of FOR
+                } //END of FOR
             }
             UpdatedPending();
             GridView3.DataSourceID = "SqlConUpdate";
@@ -127,7 +145,6 @@ namespace Collateral_int
             }
 
         }
-
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             string fullUsername = User.Identity.Name;
@@ -172,47 +189,47 @@ namespace Collateral_int
                         Val15 = (gw.FindControl("Label15") as Label).Text;
                         //********************************************************
                         sqlCon.Open();
-                        string query = "INSERT INTO[dbo].[Wak_Tbl] (" +
+                        string query = "INSERT INTO[dbo].[Wak_Tbl]" +
+                            " (" + 
                             "[ClientName]," +
-                            "[FacilityApproval] ," +
-                            "[FacilityType] ," +
-                            "[FacilityStatus] ," +
-                            "[SafeNo] ," +
-                            "[drawer]," +
+                            "[FacilityApproval]," + 
+                            "[FacilityType]," +
+                            "[FacilityStatus]," + 
+                            "[SafeNo]," + 
+                            "[drawer]," + 
                             "[FolderNo]," +
-                            "[Extention] ," +
-                            "[modification]," +
-                            "[SafeInDate] ," +
-                            "[DocStatus] ," +
-                            "[SafeOutDate] ," +
-                            "[Remark]," +
-                            "[InsertedBy]" +
+                            "[Extention]," + 
+                            "[modification]," + 
+                            "[SafeInDate]," + 
+                            "[DocStatus]," +
+                            "[SafeOutDate] ," + 
+                            "[Remark]," + 
+                            "[InsertedBy]" + 
                             ")" +
                             " VALUES(" +
-                            "@val2,@val3,@val4,@val5,@val6,@val7," +
-                            "@val8,@val9,@val10,@val11,@val12," +
+                            "@val2,@val3,@val4,@val5,@val6,@val7," + 
+                            "@val8,@val9,@val10,@val11,@val12," + 
                             "@val13,@val14,@val15)";
 
                         SqlCommand sqlcmd = new SqlCommand(query, sqlCon);
                         //==========catch selected data=================================
-                        sqlcmd.Parameters.AddWithValue("@val2", Val2);//clinename
-                        sqlcmd.Parameters.AddWithValue("@val3", Val3);//facilityApprovll
-                        sqlcmd.Parameters.AddWithValue("@val4", Val4);//FacilityType
-                        sqlcmd.Parameters.AddWithValue("@val5", Val5);//Facility Status
-                        sqlcmd.Parameters.AddWithValue("@val6", Val6);//SafeNo
-                        sqlcmd.Parameters.AddWithValue("@val7", Val7);//drawer
-                        sqlcmd.Parameters.AddWithValue("@val8", Val8);//folderNO
-                        sqlcmd.Parameters.AddWithValue("@val9", Val9);//Extention
-                        sqlcmd.Parameters.AddWithValue("@val10", Val10);//Modification
-                        sqlcmd.Parameters.AddWithValue("@val11", Val11);//SafeIn
-                        sqlcmd.Parameters.AddWithValue("@val12", Val12);//DocStatus
-                        sqlcmd.Parameters.AddWithValue("@val13", Val13);//SafeOutDate
-                        sqlcmd.Parameters.AddWithValue("@val14", Val14);//Remark
-                        sqlcmd.Parameters.AddWithValue("@val15", Val15);//Remark
+                        sqlcmd.Parameters.AddWithValue("@val2", Val2); //clinename
+                        sqlcmd.Parameters.AddWithValue("@val3", Val3); //facilityApprovll
+                        sqlcmd.Parameters.AddWithValue("@val4", Val4); //FacilityType
+                        sqlcmd.Parameters.AddWithValue("@val5", Val5); //Facility Status
+                        sqlcmd.Parameters.AddWithValue("@val6", Val6); //SafeNo
+                        sqlcmd.Parameters.AddWithValue("@val7", Val7); //drawer
+                        sqlcmd.Parameters.AddWithValue("@val8", Val8); //folderNO
+                        sqlcmd.Parameters.AddWithValue("@val9", Val9); //Extention
+                        sqlcmd.Parameters.AddWithValue("@val10", Val10); //Modification
+                        sqlcmd.Parameters.AddWithValue("@val11", Val11); //SafeIn
+                        sqlcmd.Parameters.AddWithValue("@val12", Val12); //DocStatus
+                        sqlcmd.Parameters.AddWithValue("@val13", Val13); //SafeOutDate
+                        sqlcmd.Parameters.AddWithValue("@val14", Val14); //Remark
+                        sqlcmd.Parameters.AddWithValue("@val15", username); //Remark
                         sqlcmd.ExecuteNonQuery();
 
                         sqlCon.Close();
-
 
                         using (SqlConnection sqlCon2 = new SqlConnection(ConStr))
                         {
@@ -240,7 +257,8 @@ namespace Collateral_int
                         }
                         //--------------------READ CURRENT ID AND NEW ID FROM WAK_TBL_ID----------------------------------------
 
-                        string oldID, NewID;
+                        string oldID,
+                        NewID;
                         string constr2 = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
                         using (SqlConnection con = new SqlConnection(constr2))
                         {
@@ -271,7 +289,7 @@ namespace Collateral_int
                             sqlConn.Close();
                         }
                         // break;
-                    }//==========================================end of FOR
+                    } //==========================================end of FOR
                 }
             }
 
@@ -296,7 +314,6 @@ namespace Collateral_int
                     ChkBoxRows.Checked = false;
                 }
             }
-
 
         }
 
@@ -335,7 +352,6 @@ namespace Collateral_int
             }
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -361,12 +377,12 @@ namespace Collateral_int
 
                 if (Access_role == null)
                 {
-                    Response.Redirect("Loging.aspx");
-                    Session.Remove("loading");
+                    //Response.Redirect("Loging.aspx");
+                    //Session.Remove("loading");
+                    Response.Redirect("NotAuthorize.aspx?ReturnPath=" + Server.UrlEncode(Request.Url.AbsoluteUri));
+
                 }
             }
-
-
 
         }
 
@@ -394,7 +410,9 @@ namespace Collateral_int
                     maxId = command.ExecuteNonQuery();
                     conn.Close();
                 }
-
+                string fullUsername = User.Identity.Name;
+                int index_domain = fullUsername.IndexOf("AIB\\");
+                string username = fullUsername.Substring(fullUsername.IndexOf("\\") + 1);
                 //=====================================================================
                 string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
                 using (SqlConnection sqlCon = new SqlConnection(connectionString))
@@ -423,41 +441,27 @@ namespace Collateral_int
                             Val13 = (gw.FindControl("Label13") as Label).Text;
                             Val14 = (gw.FindControl("Label14") as Label).Text;
                             Val15 = (gw.FindControl("Label15") as Label).Text;
+
                             //********************************************************
                             sqlCon.Open();
-                            string query = "INSERT INTO[dbo].[Wak_Tbl] (" +
-                                "[ClientName]," +
-                                "[FacilityApproval] ," +
-                                "[FacilityType] ," +
-                                "[FacilityStatus] ," +
-                                "[SafeNo] ," +
-                                "[drawer]," +
-                                "[FolderNo]," +
-                                "[Extention] ," +
-                                "[modification]," +
-                                "[SafeInDate] ," +
-                                "[DocStatus] ," +
-                                "[SafeOutDate] ," +
-                                "[Remark]," +
-                                "[InsertedBy]" +
-                                ") values(@val2,@val3,@val4,@val5,@val6,@val7,@val8,@val9,@val10,@val11,@val12,@val13,@val14,@val15)";
+                            string query = "INSERT INTO[dbo].[Wak_Tbl] (" + "[ClientName]," + "[FacilityApproval] ," + "[FacilityType] ," + "[FacilityStatus] ," + "[SafeNo] ," + "[drawer]," + "[FolderNo]," + "[Extention] ," + "[modification]," + "[SafeInDate] ," + "[DocStatus] ," + "[SafeOutDate] ," + "[Remark]," + "[InsertedBy]" + ") values(@val2,@val3,@val4,@val5,@val6,@val7,@val8,@val9,@val10,@val11,@val12,@val13,@val14,@val15)";
 
                             SqlCommand sqlcmd = new SqlCommand(query, sqlCon);
                             //==========catch selected data=================================
-                            sqlcmd.Parameters.AddWithValue("@val2", Val2);//clinename
-                            sqlcmd.Parameters.AddWithValue("@val3", Val3);//facilityApprovll
-                            sqlcmd.Parameters.AddWithValue("@val4", Val4);//FacilityType
-                            sqlcmd.Parameters.AddWithValue("@val5", Val5);//Facility Status
-                            sqlcmd.Parameters.AddWithValue("@val6", Val6);//SafeNo
-                            sqlcmd.Parameters.AddWithValue("@val7", Val7);//drawer
-                            sqlcmd.Parameters.AddWithValue("@val8", Val8);//folderNO
-                            sqlcmd.Parameters.AddWithValue("@val9", Val9);//Extention
-                            sqlcmd.Parameters.AddWithValue("@val10", Val10);//Modification
-                            sqlcmd.Parameters.AddWithValue("@val11", Val11);//SafeIn
-                            sqlcmd.Parameters.AddWithValue("@val12", Val12);//DocStatus
-                            sqlcmd.Parameters.AddWithValue("@val13", Val13);//SafeOutDate
-                            sqlcmd.Parameters.AddWithValue("@val14", Val14);//Remark
-                            sqlcmd.Parameters.AddWithValue("@val15", Val15);//Remark
+                            sqlcmd.Parameters.AddWithValue("@val2", Val2); //clinename
+                            sqlcmd.Parameters.AddWithValue("@val3", Val3); //facilityApprovll
+                            sqlcmd.Parameters.AddWithValue("@val4", Val4); //FacilityType
+                            sqlcmd.Parameters.AddWithValue("@val5", Val5); //Facility Status
+                            sqlcmd.Parameters.AddWithValue("@val6", Val6); //SafeNo
+                            sqlcmd.Parameters.AddWithValue("@val7", Val7); //drawer
+                            sqlcmd.Parameters.AddWithValue("@val8", Val8); //folderNO
+                            sqlcmd.Parameters.AddWithValue("@val9", Val9); //Extention
+                            sqlcmd.Parameters.AddWithValue("@val10", Val10); //Modification
+                            sqlcmd.Parameters.AddWithValue("@val11", Val11); //SafeIn
+                            sqlcmd.Parameters.AddWithValue("@val12", Val12); //DocStatus
+                            sqlcmd.Parameters.AddWithValue("@val13", Val13); //SafeOutDate
+                            sqlcmd.Parameters.AddWithValue("@val14", Val14); //Remark
+                            sqlcmd.Parameters.AddWithValue("@val15", Val15); //Remark
                             sqlcmd.ExecuteNonQuery();
 
                             sqlCon.Close();
@@ -487,7 +491,8 @@ namespace Collateral_int
                             }
                             //--------------------READ CURRENT ID AND NEW ID FROM WAK_TBL_ID----------------------------------------
 
-                            string oldID, NewID;
+                            string oldID,
+                            NewID;
                             string constr2 = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
                             using (SqlConnection con = new SqlConnection(constr2))
                             {
@@ -511,14 +516,14 @@ namespace Collateral_int
                             using (SqlConnection sqlConn = new SqlConnection(connectionStringg))
                             {
                                 sqlConn.Open();
-                                string queryy = "UPDATE wak_tbl SET approvedBy='" + Session["Users"].ToString() + "' where id>'" + oldID + "' and id <='" + NewID + "'";
+                                string queryy = "UPDATE wak_tbl SET approvedBy='" + username + "' where id>'" + oldID + "' and id <='" + NewID + "'";
                                 SqlCommand sqlcmdd = new SqlCommand(queryy, sqlConn);
                                 sqlcmdd.ExecuteNonQuery();
                                 sqlConn.Close();
 
                             }
                             // break;
-                        }//==========================================end of FOR
+                        } //==========================================end of FOR
                     }
                 }
 
@@ -544,7 +549,6 @@ namespace Collateral_int
             if (e.CommandName == "Insert")
             {
                 Session["pid"] = e.CommandArgument.ToString();
-
 
                 //=====================================================================
                 string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
@@ -572,45 +576,32 @@ namespace Collateral_int
                             Val13 = (gw.FindControl("Label13") as Label).Text;
                             Val14 = (gw.FindControl("Label14") as Label).Text;
                             Val15 = (gw.FindControl("Label15") as Label).Text;
-                            //********************************************************
+                            Val16 = (gw.FindControl("Label16") as Label).Text; //Archdate
+                                                                               //********************************************************
                             sqlCon.Open();
-                            string queryy = "UPDATE [dbo].[Wak_tbl] SET " +
-                                      "[ClientName] =@val2" +
-                                      ",[FacilityApproval] =@val3" +
-                                      ",[FacilityType] =@val4" +
-                                      ",[FacilityStatus] =@val5" +
-                                      ",[SafeNo] =@val6" +
-                                      ",[drawer] =@val7" +
-                                      ",[FolderNo] =@val8" +
-                                      ",[Extention] =@val9" +
-                                      ",[modification]=@val10" +
-                                      ",[SafeInDate] =@val11" +
-                                      ",[DocStatus] =@val12," +
-                                      "[SafeOutDate] =@val13," +
-                                      "[Remark] =@val14," +
-                                      "[UpdatedBy]=@val15," +
-                                      "[approvedBy]='" + username + "' WHERE id='" + Val1 + "'";
+                            string queryy = "UPDATE [dbo].[Wak_tbl] SET " + "[ClientName] =@val2" + ",[FacilityApproval] =@val3" + ",[FacilityType] =@val4" + ",[FacilityStatus] =@val5" + ",[SafeNo] =@val6" + ",[drawer] =@val7" + ",[FolderNo] =@val8" + ",[Extention] =@val9" + ",[modification]=@val10" + ",[SafeInDate] =@val11" + ",[DocStatus] =@val12," + "[SafeOutDate] =@val13," + "[Remark] =@val14," + "[UpdatedBy]=@val15," + "[ArchDate]=@val16," + "[approvedBy]='" + username + "' WHERE id='" + Val1 + "'";
 
                             SqlCommand sqlcmd = new SqlCommand(queryy, sqlCon);
                             //==========catch selected data=================================
-                            sqlcmd.Parameters.AddWithValue("@val2", Val2);//clinename
-                            sqlcmd.Parameters.AddWithValue("@val3", Val3);//facilityApprovll
-                            sqlcmd.Parameters.AddWithValue("@val4", Val4);//FacilityType
-                            sqlcmd.Parameters.AddWithValue("@val5", Val5);//Facility Status
-                            sqlcmd.Parameters.AddWithValue("@val6", Val6);//SafeNo
-                            sqlcmd.Parameters.AddWithValue("@val7", Val7);//drawer
-                            sqlcmd.Parameters.AddWithValue("@val8", Val8);//folderNO
-                            sqlcmd.Parameters.AddWithValue("@val9", Val9);//Extention
-                            sqlcmd.Parameters.AddWithValue("@val10", Val10);//Modification
-                            sqlcmd.Parameters.AddWithValue("@val11", Val11);//SafeIn
-                            sqlcmd.Parameters.AddWithValue("@val12", Val12);//DocStatus
-                            sqlcmd.Parameters.AddWithValue("@val13", Val13);//SafeOutDate
-                            sqlcmd.Parameters.AddWithValue("@val14", Val14);//Remark
-                            sqlcmd.Parameters.AddWithValue("@val15", Val15);//Updated By
+                            sqlcmd.Parameters.AddWithValue("@val2", Val2); //clinename
+                            sqlcmd.Parameters.AddWithValue("@val3", Val3); //facilityApprovll
+                            sqlcmd.Parameters.AddWithValue("@val4", Val4); //FacilityType
+                            sqlcmd.Parameters.AddWithValue("@val5", Val5); //Facility Status
+                            sqlcmd.Parameters.AddWithValue("@val6", Val6); //SafeNo
+                            sqlcmd.Parameters.AddWithValue("@val7", Val7); //drawer
+                            sqlcmd.Parameters.AddWithValue("@val8", Val8); //folderNO
+                            sqlcmd.Parameters.AddWithValue("@val9", Val9); //Extention
+                            sqlcmd.Parameters.AddWithValue("@val10", Val10); //Modification
+                            sqlcmd.Parameters.AddWithValue("@val11", Val11); //SafeIn
+                            sqlcmd.Parameters.AddWithValue("@val12", Val12); //DocStatus
+                            sqlcmd.Parameters.AddWithValue("@val13", Val13); //SafeOutDate
+                            sqlcmd.Parameters.AddWithValue("@val14", Val14); //Remark
+                            sqlcmd.Parameters.AddWithValue("@val15", Val15); //Updated By
+                            sqlcmd.Parameters.AddWithValue("@val16", Val16); //archdate
                             sqlcmd.ExecuteNonQuery();
                             //Lblresult.Text = "Pending record updated successfully!";
                             //Lblresult.ForeColor = System.Drawing.Color.Blue;
-                            //Lblresult.Visible = true;
+                            Lblresult.Visible = true;
                             sqlCon.Close();
                             using (SqlConnection sqlCon2 = new SqlConnection(connectionString))
                             {
@@ -624,7 +615,7 @@ namespace Collateral_int
                             }
                             break;
                         }
-                    }//==========================================end of FOREACH
+                    } //==========================================end of FOREACH
                 }
                 UpdatedPending();
                 GridView3.DataSourceID = "SqlConUpdate";
@@ -691,7 +682,6 @@ namespace Collateral_int
             }
 
         }
-
 
     }
 }

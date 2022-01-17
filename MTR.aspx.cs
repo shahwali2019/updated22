@@ -54,8 +54,6 @@ namespace Collateral
             }
         }
 
- 
-
         protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
 
@@ -142,7 +140,6 @@ namespace Collateral
 
             //-------------------------
 
-
             if (string.IsNullOrEmpty(txtCname.Text) && string.IsNullOrEmpty(txtBD.Text))
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
@@ -170,7 +167,6 @@ namespace Collateral
                     resultLbl.Text = "Found " + counter + " Record(s).";
             }
             //-------------------------
-
 
             if (!string.IsNullOrEmpty(txtCname.Text) && !string.IsNullOrEmpty(txtBD.Text))
             {
@@ -226,22 +222,22 @@ namespace Collateral
                 var chkSelect = gw.FindControl("chkSelect") as CheckBox;
                 if (chkSelect.Checked)
                 {
-                    string Val1 = (gw.FindControl("Label2") as Label).Text;//
-                    string Val2 = (gw.FindControl("Label3") as Label).Text;//
-                    string Val3 = (gw.FindControl("Label4") as Label).Text;//
-                    string Val4 = (gw.FindControl("Label5") as Label).Text;//
-                    string Val5 = (gw.FindControl("Label6") as Label).Text;//
-                    string Val6 = (gw.FindControl("Label7") as Label).Text;//
-                    string Val7 = (gw.FindControl("Label8") as Label).Text;//
-                    string Val8 = (gw.FindControl("Label9") as Label).Text;//
-                    string Val9 = (gw.FindControl("Label10") as Label).Text;//
-                    string Val10 = (gw.FindControl("Label11") as Label).Text;//
-                    string Val11 = (gw.FindControl("Label12") as Label).Text;//
-                    string Val12 = (gw.FindControl("Label13") as Label).Text;//
-                    string Val13 = (gw.FindControl("Label14") as Label).Text;//
-                    string Val14 = (gw.FindControl("Label15") as Label).Text;//
-                    string Val15 = (gw.FindControl("Label16") as Label).Text;//
-                    string Val16 = (gw.FindControl("Label17") as Label).Text;//
+                    string Val1 = (gw.FindControl("Label2") as Label).Text; //
+                    string Val2 = (gw.FindControl("Label3") as Label).Text; //
+                    string Val3 = (gw.FindControl("Label4") as Label).Text; //
+                    string Val4 = (gw.FindControl("Label5") as Label).Text; //
+                    string Val5 = (gw.FindControl("Label6") as Label).Text; //
+                    string Val6 = (gw.FindControl("Label7") as Label).Text; //
+                    string Val7 = (gw.FindControl("Label8") as Label).Text; //
+                    string Val8 = (gw.FindControl("Label9") as Label).Text; //
+                    string Val9 = (gw.FindControl("Label10") as Label).Text; //
+                    string Val10 = (gw.FindControl("Label11") as Label).Text; //
+                    string Val11 = (gw.FindControl("Label12") as Label).Text; //
+                    string Val12 = (gw.FindControl("Label13") as Label).Text; //
+                    string Val13 = (gw.FindControl("Label14") as Label).Text; //
+                    string Val14 = (gw.FindControl("Label15") as Label).Text; //
+                    string Val15 = (gw.FindControl("Label16") as Label).Text; //
+                    string Val16 = (gw.FindControl("Label17") as Label).Text; //
                     dt.Rows.Add(Val1, Val2, Val3, Val4, Val5, Val6, Val7, Val8, Val9, Val10, Val11, Val12, Val13, Val14, Val15, Val16);
                 }
             }
@@ -274,6 +270,5 @@ namespace Collateral
             }
         }
 
-      
     }
 }
